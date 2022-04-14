@@ -6,6 +6,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class ClientHandler {
+
     private MyServer myServer;
     private Socket socket;
     private DataInputStream dis;
@@ -38,7 +39,7 @@ public class ClientHandler {
 
     }
 
-    public void closeConnection() {
+    private void closeConnection() {
         myServer.unsubscribe(this);
         myServer.broadcastMessage(name + " leave chat");
         try {
@@ -86,7 +87,7 @@ public class ClientHandler {
         }
     }
 
-    public void authentication() throws IOException {
+    private void authentication() throws IOException {
         while (true) {
             String str = dis.readUTF();
             if (str.startsWith("/auth")) {
@@ -114,5 +115,4 @@ public class ClientHandler {
     public String getName() {
         return name;
     }
-
 }

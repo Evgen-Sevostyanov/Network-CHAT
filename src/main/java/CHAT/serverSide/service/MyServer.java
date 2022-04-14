@@ -14,7 +14,7 @@ public class MyServer {
     private AuthService authService;
 
     public AuthService getAuthService() {
-        return authService;
+        return this.authService;
     }
 
     public MyServer() {
@@ -44,7 +44,7 @@ public class MyServer {
         }
     }
 
-    public synchronized void sendMassageToCertainUser(ClientHandler from,String toWhom, String message) {
+    public synchronized void sendMassageToCertainUser(ClientHandler from, String toWhom, String message) {
         for (ClientHandler c : clients) {
             if (c.getName().equals(toWhom)){
                 c.sendMessage(message);
@@ -69,4 +69,5 @@ public class MyServer {
         }
         return false;
     }
+
 }

@@ -1,4 +1,4 @@
-package CHAT.clientSide.one;
+package CHAT.clientSide.two;
 
 import javax.swing.*;
 import java.awt.*;
@@ -10,6 +10,7 @@ import java.io.IOException;
 import java.net.Socket;
 
 public class Client extends JFrame {
+
     private final Integer SERVER_PORT = 8081;
     private final String SERVER_ADDRESS = "localhost";
     private Socket socket;

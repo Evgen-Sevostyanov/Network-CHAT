@@ -6,7 +6,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class BaseAuthService implements AuthService {
-    private final List<Entry> entryList;
+
+    private List<Entry> entryList;
 
     public BaseAuthService(){
         entryList = new ArrayList<>();
@@ -34,10 +35,10 @@ public class BaseAuthService implements AuthService {
         return null;
     }
 
-    private static class Entry{
-        private final String login;
-        private final String password;
-        private final String nick;
+    private class Entry{
+        private String login;
+        private String password;
+        private String nick;
 
         public Entry( String login, String password,String nick) {
             this.login = login;
